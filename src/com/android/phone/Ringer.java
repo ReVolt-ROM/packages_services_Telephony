@@ -358,14 +358,14 @@ public class Ringer {
     }
 
     private boolean inQuietHours() {
-        boolean quietHoursEnabled = Settings.AOKP.getInt(mContext.getContentResolver(),
-                Settings.AOKP.QUIET_HOURS_ENABLED, 0) != 0;
+        boolean quietHoursEnabled = Settings.REVOLT.getInt(mContext.getContentResolver(),
+                Settings.REVOLT.QUIET_HOURS_ENABLED, 0) != 0;
         int quietHoursStart = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.AOKP.QUIET_HOURS_START, 0);
-        int quietHoursEnd = Settings.AOKP.getInt(mContext.getContentResolver(),
-                Settings.AOKP.QUIET_HOURS_END, 0);
-        boolean quietHoursRinger = Settings.AOKP.getInt(mContext.getContentResolver(),
-                Settings.AOKP.QUIET_HOURS_RINGER, 0) != 0;
+                Settings.REVOLT.QUIET_HOURS_START, 0);
+        int quietHoursEnd = Settings.REVOLT.getInt(mContext.getContentResolver(),
+                Settings.REVOLT.QUIET_HOURS_END, 0);
+        boolean quietHoursRinger = Settings.REVOLT.getInt(mContext.getContentResolver(),
+                Settings.REVOLT.QUIET_HOURS_RINGER, 0) != 0;
         if (quietHoursEnabled && quietHoursRinger) {
             if (quietHoursStart == quietHoursEnd) {
                 return true;
