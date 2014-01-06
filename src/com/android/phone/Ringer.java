@@ -360,7 +360,7 @@ public class Ringer {
     private boolean inQuietHours() {
         boolean quietHoursEnabled = Settings.REVOLT.getInt(mContext.getContentResolver(),
                 Settings.REVOLT.QUIET_HOURS_ENABLED, 0) != 0;
-        int quietHoursStart = Settings.System.getInt(mContext.getContentResolver(),
+        int quietHoursStart = Settings.REVOLT.getInt(mContext.getContentResolver(),
                 Settings.REVOLT.QUIET_HOURS_START, 0);
         int quietHoursEnd = Settings.REVOLT.getInt(mContext.getContentResolver(),
                 Settings.REVOLT.QUIET_HOURS_END, 0);
