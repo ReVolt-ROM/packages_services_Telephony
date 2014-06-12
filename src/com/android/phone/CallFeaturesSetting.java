@@ -569,7 +569,7 @@ public class CallFeaturesSetting extends PreferenceActivity
                     mNonIntrusiveInCall.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mSmartCall){
-            Settings.AOKP.putInt(getContentResolver(), Settings.AOKP.SMART_PHONE_CALLER,
+            Settings.REVOLT.putInt(getContentResolver(), Settings.REVOLT.SMART_PHONE_CALLER,
                     mSmartCall.isChecked() ? 1 : 0);
             return true;
         }
@@ -1725,8 +1725,8 @@ public class CallFeaturesSetting extends PreferenceActivity
 
         restoreLookupProviders();
         mSmartCall = (CheckBoxPreference) findPreference(BUTTON_SMART_PHONE_CALL_KEY);
-        mSmartCall.setChecked(Settings.AOKP.getInt(getContentResolver(),
-                Settings.AOKP.SMART_PHONE_CALLER, 0) != 0 ? true : false);
+        mSmartCall.setChecked(Settings.REVOLT.getInt(getContentResolver(),
+                Settings.REVOLT.SMART_PHONE_CALLER, 0) != 0 ? true : false);
 
         // create intent to bring up contact list
         mContactListIntent = new Intent(Intent.ACTION_GET_CONTENT);
