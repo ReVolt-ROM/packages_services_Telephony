@@ -31,12 +31,13 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.SystemVibrator;
 import android.os.Vibrator;
-import android.provider.Settings;
 import android.util.Log;
 
 import java.util.Calendar;
 
 import com.android.internal.telephony.Phone;
+import com.android.internal.util.aokp.QuietHoursHelper;
+
 /**
  * Ringer manager for the Phone app.
  */
@@ -358,28 +359,6 @@ public class Ringer {
     }
 
     private boolean inQuietHours() {
-        boolean quietHoursEnabled = Settings.REVOLT.getInt(mContext.getContentResolver(),
-                Settings.REVOLT.QUIET_HOURS_ENABLED, 0) != 0;
-        int quietHoursStart = Settings.REVOLT.getInt(mContext.getContentResolver(),
-                Settings.REVOLT.QUIET_HOURS_START, 0);
-        int quietHoursEnd = Settings.REVOLT.getInt(mContext.getContentResolver(),
-                Settings.REVOLT.QUIET_HOURS_END, 0);
-        boolean quietHoursRinger = Settings.REVOLT.getInt(mContext.getContentResolver(),
-                Settings.REVOLT.QUIET_HOURS_RINGER, 0) != 0;
-        if (quietHoursEnabled && quietHoursRinger) {
-            if (quietHoursStart == quietHoursEnd) {
-                return true;
-            }
-            // Get the date in "quiet hours" format.
-            Calendar calendar = Calendar.getInstance();
-            int minutes = calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE);
-            if (quietHoursEnd < quietHoursStart) {
-                // Starts at night, ends in the morning.
-                return (minutes > quietHoursStart) || (minutes < quietHoursEnd);
-            } else {
-                return (minutes > quietHoursStart) && (minutes < quietHoursEnd);
-            }
-        }
-        return false;
+        return QuietHoursHelper.inQuietHours(mContext, Settings.REVOLT.QUIET_HOURS_RINGER);
     }
 }
