@@ -18,9 +18,6 @@
  */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="mwi_notification_title">Üzenet várakozás kijelzés</string>
-  <string name="mwi_notification_summary">Üzenet megjelenítése várakozó hangpostánál</string>
-  <string name="preference_category_interface">Felület</string>
-  <string name="non_intrusive_incall_title">Nem tolakodó</string>
-  <string name="non_intrusive_incall_summary">Nem tolakodó ablak használata bejövő hívásnál</string>
+  <string name="flip_action_title">Acció en girar</string>
+  <string name="entry_do_nothing">No farà res</string>
 </resources>

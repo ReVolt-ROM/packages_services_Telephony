@@ -86,6 +86,10 @@
     <string name="blacklist_message_notification_unknown_number">Blocked a message from unknown number %s</string>
     <string name="blacklist_message_notification_multiple"><xliff:g id="count">%d</xliff:g> messages were blocked</string>
     <string name="blacklist_notification_list_private">Private</string>
-    <string name="unblock_number">Unblock</string>	
-</resources>
+    <string name="unblock_number">Unblock</string>
 
+
+    <!-- Permission for notification-bar network toggle -->
+    <string name="perm_change_mobile_network">change network mode (2G/3G/4G)</string>
+    <string name="perm_change_mobile_network_desc">Allows the app to change between 2G, 3G and 4G data at any time. 3G and 4G is faster, but consumes more battery and may cause additional cost.</string>
+</resources>
