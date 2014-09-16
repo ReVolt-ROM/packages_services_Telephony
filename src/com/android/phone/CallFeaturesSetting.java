@@ -580,7 +580,7 @@ public class CallFeaturesSetting extends PreferenceActivity
                     mSmartCall.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mDetailedIncallInfo){
-            Settings.AOKP.putInt(getContentResolver(), Settings.AOKP.DETAILED_INCALL_INFO,
+            Settings.REVOLT.putInt(getContentResolver(), Settings.REVOLT.DETAILED_INCALL_INFO,
                     mDetailedIncallInfo.isChecked() ? 1 : 0);
             return true;
         }
@@ -1769,8 +1769,8 @@ public class CallFeaturesSetting extends PreferenceActivity
                 Settings.REVOLT.SMART_PHONE_CALLER, 0) != 0 ? true : false);
 
         mDetailedIncallInfo = (CheckBoxPreference) findPreference(BUTTON_DETAILED_INCALL_INFO_KEY);
-        mDetailedIncallInfo.setChecked(Settings.AOKP.getInt(getContentResolver(),
-                Settings.AOKP.DETAILED_INCALL_INFO, 0) != 0 ? true : false);
+        mDetailedIncallInfo.setChecked(Settings.REVOLT.getInt(getContentResolver(),
+                Settings.REVOLT.DETAILED_INCALL_INFO, 0) != 0 ? true : false);
 
         // create intent to bring up contact list
         mContactListIntent = new Intent(Intent.ACTION_GET_CONTENT);
